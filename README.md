@@ -17,8 +17,8 @@ This is a marketing tagline generator [tutorial](). It may be setup as a [Cron](
 4. Create a new virtual environment
 
    ```bash
-   $ python -m venv .
-   $ . /bin/activate
+   $ python -m venv venv
+   $ . venv/bin/activate
    ```
 
 5. Install the requirements

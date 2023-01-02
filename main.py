@@ -1,5 +1,5 @@
 import openai
-
+from datetime import datetime
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -8,7 +8,7 @@ import os
 openai.api_key = os.environ.get('OPENAI_API_KEY')
 
 def generate_message():
-    word = "seat"
+    word = "love"
     response = openai.Completion.create(
         model="text-davinci-002",
         prompt=generate_prompt(word),
@@ -33,6 +33,7 @@ text = result.choices[0]['text']
 
 def write_to_file(filename, output):
     with open(filename, 'a') as file:
-        file.write(output + '\n')
+        time = str(datetime.now())
+        file.write(time + ' ' + output + '\n')
 
 write_to_file('output.txt', text)
